@@ -1,0 +1,22 @@
+# Ignore conf
+conf/config.json
+
+bin
+
+db/dbconf.yml
+
+db_log/dbconf.yml
+
+static/.DS_Store
+static/upload/.DS_Store
+static/upload/avatar/*
+static/upload/bpkb/*
+static/upload/ktp/*
+static/upload/stnk/*
+static/upload/persetujuan/*
+
+vendor/*
+
+.idea/*
+logs/*.log
+media/
