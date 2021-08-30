@@ -1,0 +1,20 @@
+{
+    "server":{
+        "port": "8823",
+        "version": "0.0.1",
+        "name": "API-ECHO"
+    },
+    "connection": {
+        "db":{
+            "DB_NAME": "test-api-echo",
+            "DB_HOST": "localhost",
+            "DB_PORT": "8889",
+            "DB_USER": "root",
+            "DB_PASSWORD": "root"
+        }
+    },
+    "swagger": {
+        "url": "localhost:8823",
+        "schemes": "http"
+    }
+}

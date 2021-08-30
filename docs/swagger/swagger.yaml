@@ -1,0 +1,198 @@
+definitions:
+  employee.Employee:
+    properties:
+      alamat:
+        type: string
+      id:
+        type: integer
+      nama:
+        type: string
+      telepon:
+        type: string
+    type: object
+  employee.EmployeeAdd:
+    properties:
+      alamat:
+        type: string
+      nama:
+        type: string
+      telepon:
+        type: string
+    required:
+    - nama
+    - telepon
+    type: object
+  models.JSONResponse:
+    properties:
+      data:
+        type: object
+      message:
+        type: string
+      status:
+        type: string
+      total_data:
+        type: integer
+      total_page:
+        type: integer
+      validation:
+        type: object
+    type: object
+info:
+  contact: {}
+  license: {}
+paths:
+  /api/v1/employee/create:
+    post:
+      consumes:
+      - application/json
+      description: 'Create data employee (Validation: Need testing)'
+      parameters:
+      - description: Body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/employee.EmployeeAdd'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.JSONResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.JSONResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/models.JSONResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.JSONResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.JSONResponse'
+      summary: Request for create data
+      tags:
+      - API EMPLOYEE
+  /api/v1/employee/delete/{id}:
+    get:
+      consumes:
+      - application/json
+      description: 'Delete data employee (Validation: Need testing)'
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.JSONResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.JSONResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/models.JSONResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.JSONResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.JSONResponse'
+      summary: Request for delete data
+      tags:
+      - API EMPLOYEE
+  /api/v1/employee/index:
+    get:
+      consumes:
+      - application/json
+      description: 'Get data employee (Validation: Need testing)'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/models.JSONResponse'
+            - properties:
+                Data:
+                  $ref: '#/definitions/employee.Employee'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.JSONResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/models.JSONResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.JSONResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.JSONResponse'
+      summary: Request get data
+      tags:
+      - API EMPLOYEE
+  /api/v1/employee/update/{id}:
+    post:
+      consumes:
+      - application/json
+      description: 'Update data employee (Validation: Need testing)'
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/employee.EmployeeAdd'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.JSONResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.JSONResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/models.JSONResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.JSONResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.JSONResponse'
+      summary: Request for update data
+      tags:
+      - API EMPLOYEE
+swagger: "2.0"

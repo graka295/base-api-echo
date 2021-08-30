@@ -1,0 +1,8 @@
+{
+    "validateMessage": {
+        "required": "Field tidak boleh kosong",
+        "exist" : "{{.Name}} sudah digunakan",
+        "notfound": "{{.Name}} tidak di temukan",
+        "phoneNumber": "Phone number tidak sesuai"
+    }
+}
